@@ -1,4 +1,4 @@
-# ToDoList
+# To Do List
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.1.
 Welcome to the **To-Do List Application** repository! This project is designed to help users manage their tasks efficiently by providing functionalities to add, edit, complete, and delete tasks.
