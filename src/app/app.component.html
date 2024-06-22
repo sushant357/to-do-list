@@ -1,22 +1,46 @@
 <section id="add-form">
   <div class="wrapper">
     <div id="add-controller">
-      <input type="text" placeholder="Ex. Meeting at 2:45PM" ngModel>
-      <button>Add Task</button>
+      <input type="text" placeholder="Ex. Meeting at 2:45PM" [(ngModel)]="task_item">
+      <button (click)="addTask()">Add Task</button>
     </div>
   </div>
 </section>
 <section id="to-do-list">
   <div class="wrapper">
+    <h2>Today's Tasklist</h2>
     <ul id="listing-wrapper">
       @for(item of list; track list){
         <li>
           <div>
-            {{item.title}}
+            @if(item.edit==false){
+              <span [ngClass]="item.complete ? 'complete': ''">{{item.title}}</span>
+            }@else{
+              <input type="text" [(ngModel)]="edited_task_item">
+            }
           </div>
           <div class="button-container">
-            <button>Done</button>
-            <button>Delete</button>
+            @if(!item.complete){
+              <button (click)="editTask($index)">
+                @if(!item.edit){
+                  <img src="./assets/edit.svg" alt="">
+                }@else{
+                  <img src="./assets/complete.svg" alt="">
+                }
+              </button>
+            }
+            @if(!item.edit){
+              <button (click)="completeTask($index)">
+                @if(!item.complete){
+                  <img src="./assets/complete.svg" alt="">
+                }@else{
+                  <img src="./assets/undo.svg" alt="">
+                }
+              </button>
+              <button (click)="deleteTask($index)">
+                <img src="./assets/delete.svg" alt="">
+              </button>
+            }
           </div>
         </li>
       }

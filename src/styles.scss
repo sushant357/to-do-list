@@ -7,9 +7,10 @@
   padding:0;
   font-family: "Montserrat", sans-serif;
   outline: none;
+  box-sizing: border-box;
 }
 html,body{font-size: 14px;}
-
+body{background-color: #3ABEF9;}
 #add-form{
   background-color: #A7E6FF;
   padding:70px 0;
@@ -35,4 +36,45 @@ html,body{font-size: 14px;}
   }
 }
 .wrapper{width: 768px;max-width: 80%;margin:0 auto}
-
+h2{color:#fff;padding: 30px 0 10px;font-size: 28px;font-weight: 500;}
+#listing-wrapper{
+  li{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    padding:15px 20px;
+    margin:10px 0;
+    background-color:#17a8e8;
+    border:2px solid #94d3ef;
+    border-radius: 14px;
+    color:#fff;
+    align-items: center;
+    font-size: 16px;
+    .complete{text-decoration: line-through;}
+    div:first-child{
+      flex-grow: 2;
+    }
+    input[type=text]{
+      background: #1297d2;
+      border: none;
+      color: #fff;
+      font-size: 16px;
+      width: 100%;
+      padding: 10px;
+      border-radius: 7px;
+    }
+    button{
+      padding: 7px 10px;
+      border: none;
+      background-color: #a7e6ff;
+      color:#17a8e8;
+      font-weight: 700;
+      border-radius: 7px;
+      margin-left: 7px;
+      cursor: pointer;
+      img{
+        height: 20px;
+      }
+    }
+  }
+}
